@@ -8,9 +8,6 @@ data class SimulatedPopulation(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0L,
 
-    @Column(name = "simulation_id")
-    val simulationId: Long,
-
     @Column(name = "no_of_infected_ppl")
     val numberOfInfectedPeople: Int,
 
@@ -21,5 +18,9 @@ data class SimulatedPopulation(
 
     val numberOfDeaths: Int,
     @Column(name = "no_of_cured_and_immune")
-    val numberOfCuredAndImmune: Int
+    val numberOfCuredAndImmune: Int,
+
+    @JoinColumn(name = "simulation_id")
+    @ManyToOne
+    val simulation: Simulation
 )
