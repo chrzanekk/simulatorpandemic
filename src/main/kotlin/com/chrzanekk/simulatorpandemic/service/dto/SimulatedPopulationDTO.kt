@@ -1,10 +1,12 @@
 package com.chrzanekk.simulatorpandemic.service.dto
 
+import java.math.BigDecimal
+
 data class SimulatedPopulationDTO(
     val id: Long,
-    val numberOfInfectedPeople: Int,
-    val numberOfHealthySusceptibleForInfection: Int,
-    val numberOfDeaths: Int,
-    val numberOfCuredAndImmune: Int,
+    val numberOfInfectedPeople: BigDecimal,
+    val numberOfHealthySusceptibleForInfection: BigDecimal,
+    val numberOfDeaths: BigDecimal,
+    val numberOfCuredAndImmune: BigDecimal,
     val simulationId: Long
 )
