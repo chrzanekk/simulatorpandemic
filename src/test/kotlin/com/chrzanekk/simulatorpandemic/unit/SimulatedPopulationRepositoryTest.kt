@@ -12,6 +12,7 @@ import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
+import java.math.BigDecimal
 
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -63,7 +64,8 @@ class SimulatedPopulationRepositoryTest {
         //given
 
         val simulation = simulationRepository.findById(1L).get()
-        val newSimulatedPopulation = SimulatedPopulation(0L, 200, 50, 10, 25, simulation)
+        val newSimulatedPopulation = SimulatedPopulation(0L, BigDecimal(200),BigDecimal(200), BigDecimal(50),
+            BigDecimal(10), simulation)
 
         //when
 

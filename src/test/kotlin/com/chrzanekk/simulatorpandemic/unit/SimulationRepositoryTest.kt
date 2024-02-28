@@ -12,6 +12,7 @@ import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
+import java.math.BigDecimal
 
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -57,7 +58,12 @@ class SimulationRepositoryTest {
     @Test
     fun checkIfDataIsSavedCorrectlyInDB() {
         //given
-        val newSimulation = Simulation(0L, "NewSimulation", 15000, 25, 1.2f, 0.9f, 11, 22, 120)
+        val newSimulation = Simulation(
+            0L, "NewSimulation", BigDecimal(15000), BigDecimal(25), BigDecimal(1.2),
+            BigDecimal(0.9),
+            11,
+            22, 120
+        )
 
         //when
 
