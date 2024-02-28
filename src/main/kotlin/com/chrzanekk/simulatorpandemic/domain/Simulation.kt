@@ -26,13 +26,13 @@ data class Simulation(
     val mortalityRate: BigDecimal,
 
     @Column(name = "infected_to_cure_duration")
-    val infectedToCureDuration: BigDecimal,
+    val infectedToCureDuration: Int,
 
     @Column(name = "infected_to_death_duration")
-    val infectedToDeathDuration: BigDecimal,
+    val infectedToDeathDuration: Int,
 
     @Column(name = "days_of_simulation")
-    val simulationDays: BigDecimal
+    val simulationDays: Int
 ) {
     fun toDTO() = SimulationDTO(
         id,
